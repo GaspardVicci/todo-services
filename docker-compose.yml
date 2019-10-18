@@ -1,0 +1,22 @@
+version: '3.2'
+
+services:
+  postgresql:
+    image: 'bitnami/postgresql:latest'
+    environment:
+      - POSTGRESQL_USERNAME=ernesti
+      - POSTGRESQL_DATABASE=nestdb
+      - POSTGRESQL_PASSWORD=nest
+      - POSTGRESQL_HOST=postgresql
+      - POSTGRESQL_PORT=5432
+    ports:
+      - "5432:5432"
+  todo-services:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgresql
+    ports:
+      - "5000:5000"
+
