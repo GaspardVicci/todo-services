@@ -2,4 +2,4 @@
 
 flask db upgrade
 
-python $@
+python3 $@
