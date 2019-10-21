@@ -23,7 +23,6 @@ class Tasks(Model):
     __tablename__ = 'tasks'
     name = Column(String(80))
     status = Column(String(120))
-    def __init__(self, name, status, **kwargs):
-        super(Tasks).__init__()
+    def __init__(self, name, status):
         self.name = name
         self.status = status

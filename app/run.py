@@ -24,10 +24,10 @@ Migrate(app, db)
 
 @app.route('/task', methods=["PATCH", "POST"])
 def task():
-    print(request)
-    lookup = {"name": "Vaisselle"}
+    print("request", request)
 
     if request.method == "PATCH":
+        print("heelloooooo")
         return send_response("tasks", patch_internal("tasks", payload = request.json))
     return send_response("tasks", post_internal("tasks", request.json))
 

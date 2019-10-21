@@ -12,5 +12,5 @@ COPY ./app /app
 
 ENV FLASK_APP "/app/run.py"
 ENTRYPOINT ["/app/migrate.sh"]
-CMD ["/app/run.py"]
+CMD ["pdb", "/app/run.py"]
 
