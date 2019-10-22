@@ -24,5 +24,6 @@ class Tasks(Model):
     name = Column(String(80))
     status = Column(String(120))
     def __init__(self, name, status):
+        super(Tasks).__init__()
         self.name = name
         self.status = status
